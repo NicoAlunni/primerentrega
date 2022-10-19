@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    {% for ibanez in object_list %}
+
+    <p> Guitarra Ibanez: {{ibanez.ibanezguitarra}}</p>
+    <p> Guitarra Ibanez: {{ibanez.serie}}</p>
+
+    <a href="{% url 'IbanezDetalle' ibanez.id %}"> Ver Ibanez </a>
+    <a href="{% url 'IbanezEditar' ibanez.id %}"> Editar Ibanez </a>
+    <a href="{% url 'IbanezBorrar' ibanez.id %}"> Eliminar Ibanez </a>
+
+    ###############################################
+
+    {% endfor %}
+
+    <br>
+
+    <a href="{% url 'IbanezCrear' ibanez.id %}"> Crear Ibanez </a>
+
+
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+{% extends "AppGuitarras/padre.html" %} 
+
+
+{% load static %}
+
+
+{% block titulo %}
+
+En esta seccion encontra las guitarras Ibanez
+
+
+{% endblock %}
+
+{% block descripcion %}
+
+<form action="/AppGuitarras/ibanezResultados/" method="GET">
+    
+    <input type="number" name="serie" id="ibanezguitarra">
+
+    <input type="submit" value="Buscar">
+
+</form>
+
+<p> Estamos buscando la serie: {{serie}} <p>
+
+    
+    {% for ibanezguitarra in Ibanez %}
+
+        <p>Nombre:  {{ibanezguitara.nombre}} ---- Stock: {{ibanezguitarra.serie}}</p>
+
+
+
+    {% endfor %}
+
+
+{% endblock %}

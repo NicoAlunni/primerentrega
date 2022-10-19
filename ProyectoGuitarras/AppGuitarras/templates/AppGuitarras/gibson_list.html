@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    {% for gibson in object_list %}
+
+    <p> Guitarra Gibson: {{gibson.gibsonguitarra}}</p>
+    <p> Guitarra Gibson: {{gibson.serie}}</p>
+
+    <a href="{% url 'GibsonDetalle' fender.id %}"> Ver Gibson </a>
+    <a href="{% url 'GibsonEditar' fender.id %}"> Editar Gibson </a>
+    <a href="{% url 'GibsonBorrar' fender.id %}"> Eliminar Gibson </a>
+
+    ###############################################
+
+    {% endfor %}
+
+    <br>
+
+    <a href="{% url 'GibsonCrear' gibson.id %}"> Crear Gibson </a>
+
+
+
+</body>
+</html>

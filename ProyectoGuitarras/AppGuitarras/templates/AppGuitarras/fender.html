@@ -1,0 +1,36 @@
+{% extends "AppGuitarras/padre.html" %} 
+
+
+{% load static %}
+
+
+{% block titulo %}
+
+En esta seccion encontra las guitarras Fender
+
+
+{% endblock %}
+
+
+{% block descripcion %}
+
+<form action="/AppGuitarras/fenderResultados/" method="GET">
+    
+    <input type="number" name="serie" id="fenderguitarra">
+
+    <input type="submit" value="Buscar">
+
+</form>
+
+<p> Estamos buscando la serie: {{serie}} <p>
+
+    
+    {% for fenderguitarra in Fender %}
+
+        <p>Nombre:  {{fenderguitara.nombre}} ---- Stock: {{fenderguitarra.serie}}</p>
+
+
+
+    {% endfor %}
+
+{% endblock %}

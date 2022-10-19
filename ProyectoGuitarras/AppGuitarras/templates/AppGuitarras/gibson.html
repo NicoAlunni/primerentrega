@@ -1,0 +1,36 @@
+{% extends "AppGuitarras/padre.html" %} 
+
+
+{% load static %}
+
+
+{% block titulo %}
+
+En esta seccion encontra las guitarras Gibson
+
+
+{% endblock %}
+
+{% block descripcion %}
+
+<form action="/AppGuitarras/gibsonResultados/" method="GET">
+    
+    <input type="number" name="serie" id="gibsonguitarra">
+
+    <input type="submit" value="Buscar">
+
+</form>
+
+<p> Estamos buscando la serie: {{serie}} <p>
+
+    
+    {% for gibsonguitarra in Gender %}
+
+        <p>Nombre:  {{gibsonguitara.nombre}} ---- Stock: {{gibsonguitarra.serie}}</p>
+
+
+
+    {% endfor %}
+
+    
+{% endblock %}
